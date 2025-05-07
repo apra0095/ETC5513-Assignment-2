@@ -1,0 +1,14 @@
+---
+title: "example"
+author: "Izzul Fattah Aji Pratama"
+format: html
+editor: visual
+---
+
+### Question 1: Create New RStudio Project and Quarto file
+
+-   Open RStudio \> New Project \> Version Control \> Git \> Paste the repo url that previously has been made from the github
+
+-   Create QMD file: in new RProj, select new file on the top left \> Quarto Document \> Save as (example.qmd)
+
+-   Set the YAML format to html and select render option to start rendering
