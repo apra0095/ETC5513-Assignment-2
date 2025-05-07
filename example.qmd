@@ -19,19 +19,18 @@ editor: visual
 
 <!-- -->
 
-<<<<<<< HEAD
 -   From the terminal in RStudio, type `git status` to check what changes that we have made
 
 -   Type `git add .` to stage the file
 
 -   Type `git commit -m " fill with meaningful commit messages"`
-=======
+
 -   From the terminal in RStudio, type git status to check what changes that we have made
 
 -   Type git add . to stage the file
 
 -   Type git commit -m " fill with meaningful commit messages"
->>>>>>> ba1e034250b4dd87e7f32bdbef01852e068a16fd
+
 
 -   Type git push origin main to push the changes that we have made to our main branch
 
@@ -52,6 +51,4 @@ editor: visual
 
     ![](images/clipboard-1433599888.png)
 
-### Question 4: Add Data Folder and Amend the Previous Commit
-=======
->>>>>>> ba1e034250b4dd87e7f32bdbef01852e068a16fd
+
