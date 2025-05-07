@@ -17,7 +17,6 @@ editor: visual
 
     ### Question 2: Initialize Git and Push to the Repo
 
-
 -   From the terminal in RStudio, type `git status` to check what changes that we have made
 
 -   Type `git add .` to stage the file
@@ -29,7 +28,6 @@ editor: visual
 -   Type git add . to stage the file
 
 -   Type git commit -m " fill with meaningful commit messages"
-
 
 -   Type git push origin main to push the changes that we have made to our main branch
 
@@ -49,7 +47,6 @@ editor: visual
 
     ![](images/clipboard-1433599888.png)
 
-
 ### Question 4: Add Data Folder and Amend the Previous Commit
 
 -   Create a `data` folder in our working directory and fill it with the Assignment 1 data
@@ -58,17 +55,16 @@ editor: visual
 
 -   Continue with `git push --set-upstream origin testbranch` to tell Git to track this remote branch for future pushes
 
--   Once the upstream is already set, the type `git push origin testbranch` the overwrite the previous commit. HERE IS THE DESIGNATED CONFLICT
+-   Once the upstream is already set, the type `git push origin testbranch` the overwrite the previous commit.
 
-### Question 5: Modify example.qmd in Main and Create Conflict
+### Question 5: Modify example.qmd in Main to Preapare Creating Conflict
 
 -   type `git checkout main` in the terminal to switch back to our main branch
 
 -   Add some changes in exapmle.qmd on main
 
--   check our changes with `git status` first and followed by `git commit --amend -m "modify question 3 and add data folder"`
+-   then push our changes to the main. this should create an error when we do question 6 because what main branch records right now is only Question 1,2,5, and will continue to 6. While the testbranch it records question 3 and 4.
 
--   Continue with `git push --set-upstream origin testbranch` to tell Git to track this remote branch for future pushes
+### Question 6: Modify example.qmd in Main to Preapare Creating Conflict
 
--   Once the upstream is already set, the type `git push --force` the overwrite the previous commit.
-
+![](images/clipboard-2659250452.png)
