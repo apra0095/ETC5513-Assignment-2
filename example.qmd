@@ -77,6 +77,6 @@ editor: visual
 
     ![](images/clipboard-3277969989.png){width="667"}
 
-### Question 7: Create Annotated Tag
+### Question 7: Create a Commit Using Annotated Tag
 
--   After we resolve the conflict in the previous question, we want to push the changes with annotated tag to the push. Type `git commit` without `-m` the Git will open a text editor for you to type your extended commit. Add a git annotated tag to the most recent commit called `v1.0`.
+-   After we resolve the conflict in the previous question, we want to push the changes with annotated tag to the push. Type `git commit` without `-m` the Git will open a text editor for you to type your extended commit. Add a git annotated tag to the most recent commit called `v1.0`
