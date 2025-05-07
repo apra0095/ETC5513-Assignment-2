@@ -15,23 +15,19 @@ editor: visual
 
     ![](images/clipboard-3291366609.png)
 
-    ### Question 2: Initialize Git and Push to the Repo 
+    ### Question 2: Initialize Git and Push to the Repo
 
-<!-- -->
-
-<<<<<<< HEAD
 -   From the terminal in RStudio, type `git status` to check what changes that we have made
 
 -   Type `git add .` to stage the file
 
 -   Type `git commit -m " fill with meaningful commit messages"`
-=======
+
 -   From the terminal in RStudio, type git status to check what changes that we have made
 
 -   Type git add . to stage the file
 
 -   Type git commit -m " fill with meaningful commit messages"
->>>>>>> ba1e034250b4dd87e7f32bdbef01852e068a16fd
 
 -   Type git push origin main to push the changes that we have made to our main branch
 
@@ -48,10 +44,15 @@ editor: visual
 -   Type `git status` in terminal to check whether git is tracking our changes then followed by `git add .` to stage the file and `git commit -m "pushing file to testbranch"`
 
 -   Finish with command `git push origin testbranch` to push our changes to the branch
-<<<<<<< HEAD
 
     ![](images/clipboard-1433599888.png)
 
 ### Question 4: Add Data Folder and Amend the Previous Commit
-=======
->>>>>>> ba1e034250b4dd87e7f32bdbef01852e068a16fd
+
+-   Create a `data` folder in our working directory and fill it with the Assignment 1 data
+
+-   check our changes with `git status` first and followed by `git commit --amend -m "modify question 3 and add data folder"`
+
+-   Continue with `git push --set-upstream origin testbranch` to tell Git to track this remote branch for future pushes
+
+-   Once the upstream is already set, the type `git push --force` the overwrite the previous commit.
