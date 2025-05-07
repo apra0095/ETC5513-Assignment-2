@@ -65,6 +65,18 @@ editor: visual
 
 -   then push our changes to the main. this should create an error when we do question 6 because what main branch records right now is only Question 1,2,5, and will continue to 6. While the testbranch it records question 3 and 4.
 
-### Question 6: Modify example.qmd in Main to Preapare Creating Conflict
+### Question 6: Merge and Resolve Conflict
+
+-   Now we want to simulate conflict. Type `git merge testbranch` to merge the changes with the branch
+
+-   Git will show an error like this:
 
 ![](images/clipboard-2659250452.png)
+
+-   Then in our source panel will pop up this messages showing `<<<<<< HEAD and ======`. This means that git want us to clarify which changes that we want to keep. in this case, i choose to keep all the changes that I have been made both in branch and main so I just need to delete all of the `<<<<<< HEAD and ======` sign.
+
+    ![](images/clipboard-3277969989.png){width="667"}
+
+### Question 7: Create Annotated Tag
+
+-   After we resolve the conflict in the previous question, we want to push the changes with annotated tag to the push. Type `git commit` without `-m` the Git will open a text editor for you to type your extended commit. Add a git annotated tag to the most recent commit called `v1.0`.

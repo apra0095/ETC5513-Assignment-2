@@ -74,7 +74,57 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>Open RStudio &gt; New Project &gt; Version Control &gt; Git &gt; Paste the repo url that previously has been made from the github</p></li>
 <li><p>Create QMD file: in new RProj, select new file on the top left &gt; Quarto Document &gt; Save as (example.qmd)</p></li>
-<li><p>Set the YAML format to html and select render option to start rendering</p></li>
+<li><p>Set the YAML format to html and select render option to start rendering</p>
+<p><img src="images/clipboard-3291366609.png" class="img-fluid"></p>
+<h3 id="question-2-initialize-git-and-push-to-the-repo" class="anchored">Question 2: Initialize Git and Push to the Repo</h3></li>
+<li><p>From the terminal in RStudio, type <code>git status</code> to check what changes that we have made</p></li>
+<li><p>Type <code>git add .</code> to stage the file</p></li>
+<li><p>Type <code>git commit -m " fill with meaningful commit messages"</code></p></li>
+<li><p>From the terminal in RStudio, type git status to check what changes that we have made</p></li>
+<li><p>Type git add . to stage the file</p></li>
+<li><p>Type git commit -m ” fill with meaningful commit messages”</p></li>
+<li><p>Type git push origin main to push the changes that we have made to our main branch</p></li>
+<li><p>Check our repo from github to make sure our push is already success</p>
+<p><img src="images/clipboard-3326618688.png" class="img-fluid"></p></li>
+</ul>
+</section>
+<section id="question-3-create-branch-modify-file-and-push" class="level3">
+<h3 class="anchored" data-anchor-id="question-3-create-branch-modify-file-and-push">Question 3: Create Branch, Modify File, and Push</h3>
+<ul>
+<li><p>Type <code>git checkout -b testbranch</code> from the terminal to create a new branch called testbranch as well as switch to the branch.</p></li>
+<li><p>Modify the file to test, in this case I am modifying the file by typing the Question 3 command</p></li>
+<li><p>Type <code>git status</code> in terminal to check whether git is tracking our changes then followed by <code>git add .</code> to stage the file and <code>git commit -m "pushing file to testbranch"</code></p></li>
+<li><p>Finish with command <code>git push origin testbranch</code> to push our changes to the branch</p>
+<p><img src="images/clipboard-1433599888.png" class="img-fluid"></p></li>
+</ul>
+</section>
+<section id="question-4-add-data-folder-and-amend-the-previous-commit" class="level3">
+<h3 class="anchored" data-anchor-id="question-4-add-data-folder-and-amend-the-previous-commit">Question 4: Add Data Folder and Amend the Previous Commit</h3>
+<ul>
+<li><p>Create a <code>data</code> folder in our working directory and fill it with the Assignment 1 data</p></li>
+<li><p>check our changes with <code>git status</code> first and followed by <code>git commit --amend -m "amend the previous commit add data folder"</code></p></li>
+<li><p>Continue with <code>git push --set-upstream origin testbranch</code> to tell Git to track this remote branch for future pushes</p></li>
+<li><p>Once the upstream is already set, the type <code>git push origin testbranch</code> the overwrite the previous commit.</p></li>
+</ul>
+</section>
+<section id="question-5-modify-example.qmd-in-main-to-preapare-creating-conflict" class="level3">
+<h3 class="anchored" data-anchor-id="question-5-modify-example.qmd-in-main-to-preapare-creating-conflict">Question 5: Modify example.qmd in Main to Preapare Creating Conflict</h3>
+<ul>
+<li><p>type <code>git checkout main</code> in the terminal to switch back to our main branch</p></li>
+<li><p>Add some changes in exapmle.qmd on main</p></li>
+<li><p>then push our changes to the main. this should create an error when we do question 6 because what main branch records right now is only Question 1,2,5, and will continue to 6. While the testbranch it records question 3 and 4.</p></li>
+</ul>
+</section>
+<section id="question-6-merge-and-resolve-conflict" class="level3">
+<h3 class="anchored" data-anchor-id="question-6-merge-and-resolve-conflict">Question 6: Merge and Resolve Conflict</h3>
+<ul>
+<li><p>Now we want to simulate conflict. Type <code>git merge testbranch</code> to merge the changes with the branch</p></li>
+<li><p>Git will show an error like this:</p></li>
+</ul>
+<p><img src="images/clipboard-2659250452.png" class="img-fluid"></p>
+<ul>
+<li><p>Then in our source panel will pop up this messages showing <code>&lt;&lt;&lt;&lt;&lt;&lt; HEAD and ======</code>. This means that git want us to clarify which changes that we want to keep. in this case, i choose to keep all the changes that I have been made both in branch and main so I just need to delete all of the <code>&lt;&lt;&lt;&lt;&lt;&lt; HEAD and ======</code> sign.</p>
+<p><img src="images/clipboard-3277969989.png" class="img-fluid"></p></li>
 </ul>
 </section>
 
