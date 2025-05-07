@@ -61,4 +61,4 @@ editor: visual
 
 -   type `git checkout main` in the terminal to switch back to our main branch
 
--   make a conflict in example.qmd, I put in on Question 4 that previously has been pushed to the testbranch
+-   Add some changes in exapmle.qmd on main
