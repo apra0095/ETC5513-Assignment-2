@@ -12,3 +12,53 @@ editor: visual
 -   Create QMD file: in new RProj, select new file on the top left \> Quarto Document \> Save as (example.qmd)
 
 -   Set the YAML format to html and select render option to start rendering
+
+    ![](images/clipboard-3291366609.png)
+
+    ### Question 2: Initialize Git and Push to the Repo
+
+-   From the terminal in RStudio, type `git status` to check what changes that we have made
+
+-   Type `git add .` to stage the file
+
+-   Type `git commit -m " fill with meaningful commit messages"`
+
+-   From the terminal in RStudio, type git status to check what changes that we have made
+
+-   Type git add . to stage the file
+
+-   Type git commit -m " fill with meaningful commit messages"
+
+-   Type git push origin main to push the changes that we have made to our main branch
+
+-   Check our repo from github to make sure our push is already success
+
+    ![](images/clipboard-3326618688.png)
+
+### Question 3: Create Branch, Modify File, and Push
+
+-   Type `git checkout -b testbranch` from the terminal to create a new branch called testbranch as well as switch to the branch.
+
+-   Modify the file to test, in this case I am modifying the file by typing the Question 3 command
+
+-   Type `git status` in terminal to check whether git is tracking our changes then followed by `git add .` to stage the file and `git commit -m "pushing file to testbranch"`
+
+-   Finish with command `git push origin testbranch` to push our changes to the branch
+
+    ![](images/clipboard-1433599888.png)
+
+### Question 4: Add Data Folder and Amend the Previous Commit
+
+-   Create a `data` folder in our working directory and fill it with the Assignment 1 data
+
+-   check our changes with `git status` first and followed by `git commit --amend -m "amend the previous commit add data folder"`
+
+-   Continue with `git push --set-upstream origin testbranch` to tell Git to track this remote branch for future pushes
+
+-   Once the upstream is already set, the type `git push origin testbranch` the overwrite the previous commit. HERE IS THE DESIGNATED CONFLICT
+
+### Question 5: Modify example.qmd in Main and Create Conflict
+
+-   type `git checkout main` in the terminal to switch back to our main branch
+
+-   make a conflict in example.qmd, I put in on Question 4 that previously has been pushed to the testbranch
