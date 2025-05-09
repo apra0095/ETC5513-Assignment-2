@@ -98,3 +98,27 @@ editor: visual
 ### Question 10: Undo Commit Without Losing Changes
 
 -   Git also has a feature to undo a commit while preserving the changes you made. It "moves" the commit pointer to a previous state but keeps the changes from that commit in the staging area (index). This allows you to edit or add new changes before committing again. We could do this by typing `git reset --soft HEAD~1` command in the terminal. In this example we will try exercise the function by committing a simple plot using ggplot.
+
+    ```{r}
+
+    library(tidyverse)
+    # Create a sample data frame
+    data <- data.frame(
+      x = c(1, 2, 3, 4, 5),
+      y = c(2, 3, 5, 7, 11)
+    )
+
+    # plotting the result
+    ggplot(data, aes(x = x, y = y)) +
+      geom_point() +
+      labs(title = "Simple Scatter Plot", x = "X Axis", y = "Y Axis")
+
+    ```
+
+-   First we try to commit our plot to the repo but suddenly after committing we realize we want to make some changes to plot. lets say I want to change the title to "Simple Scatter Plot" instead of "Scatter Plot"
+
+![](images/clipboard-4149047022.png)
+
+-   After we type the command of `git reset --soft HEAD~1` and check our commit history, it show that the commit is already moves one step behind but still keeps our work in the directory and ready to be committed again.
+
+    ![](images/clipboard-1567667199.png)
