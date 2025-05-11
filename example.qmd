@@ -1,15 +1,22 @@
 ---
-title: "example"
+title: "Assignment 2 RCP"
 author: "Izzul Fattah Aji Pratama"
 format: html
 editor: visual
+warnings: false
+echo: false
+message: false
 ---
+
+```{r}
+options(warn = -1)
+```
 
 ### Question 1: Create New RStudio Project and Quarto file
 
--   Open RStudio \> New Project \> Version Control \> Git \> Paste the repo url that previously has been made from the github
+-   Open RStudio \> New Project \> Version Control \> Git \> Paste the repository URL that was previously created on GitHub.
 
--   Create QMD file: in new RProj, select new file on the top left \> Quarto Document \> Save as (example.qmd)
+-   To create a Quarto (QMD) file, in the new RStudio Project, select **File \> New File \> Quarto Document \> Save as** (example.qmd)
 
 -   Set the YAML format to html and select render option to start rendering
 
@@ -17,87 +24,92 @@ editor: visual
 
     ### Question 2: Initialize Git and Push to the Repo
 
--   From the terminal in RStudio, type `git status` to check what changes that we have made
+-   Previously we already created an R project. However, to make this project is reproducible we must place our file in a repository so the others could also see and work on this
 
--   Type `git add .` to stage the file
+-   Open the RStudio terminal and initialize a Git repository by typing `git init`
 
--   Type `git commit -m " fill with meaningful commit messages"`
+-   add all files by typing `git add .`
 
--   From the terminal in RStudio, type git status to check what changes that we have made
+-   Commit the file using `git commit -m "initial commit"`
 
--   Type git add . to stage the file
+-   Up until this point, we could know that Git actually could work without GitHub to track changes of our file. However, since this demo is to show a reproducible practices, we need to set up a repo in GitHub then copy the SSH code and type `git remote add origin <paste the repo url>` to link the local repo to GitHub repo.
 
--   Type git commit -m " fill with meaningful commit messages"
+-   After we connect the repo, we could see that the default name of the main branch is "master" . Because we already familiar with the name of "main" lets just change it by typing `git branch -M main`
 
--   Type git push origin main to push the changes that we have made to our main branch
-
--   Check our repo from github to make sure our push is already success
+-   the last step is to push our changes by typing `git push -u origin main`
 
     ![](images/clipboard-3326618688.png)
 
-### Question 3: Create Branch, Modify File, and Push
+### Question 3: Create Branch, Modify File, and Add the File
 
--   Type `git checkout -b testbranch` from the terminal to create a new branch called testbranch as well as switch to the branch.
+-   Type `git checkout -b testbranch` in the terminal to create a new branch called `testbranch` and switch to it.
 
--   Modify the file to test, in this case I am modifying the file by typing the Question 3 command
+-   Modify the file to test. For example, I am modifying the file by typing the Question 3 command.
 
--   Type `git status` in terminal to check whether git is tracking our changes then followed by `git add .` to stage the file and `git commit -m "pushing file to testbranch"`
+-   Type `git status` in the terminal to check whether Git is tracking the changes. Then type `git add .` to stage the file and `git commit -m "pushing file to testbranch"`.
 
--   Finish with command `git push origin testbranch` to push our changes to the branch
+-   Finish with the command `git push origin testbranch` to push the changes to the `testbranch`.
 
     ![](images/clipboard-1433599888.png)
 
 ### Question 4: Add Data Folder and Amend the Previous Commit
 
--   Create a `data` folder in our working directory and fill it with the Assignment 1 data
+-   Create a `data` folder in the working directory and fill it with the Assignment 1 data. Then commit it.
 
--   check our changes with `git status` first and followed by `git commit --amend -m "amend the previous commit add data folder"`
+-   If, for instance, the wrong data was copied and needs to be replaced with the correct file, you can use the `git commit --amend` function to edit the last commit.
 
--   Continue with `git push --set-upstream origin testbranch` to tell Git to track this remote branch for future pushes
+### Question 5: Modify example.qmd in Main to Prepare Creating Conflict
 
--   Once the upstream is already set, the type `git push origin testbranch` the overwrite the previous commit.
-
-### Question 5: Modify example.qmd in Main to Preapare Creating Conflict
-
--   type `git checkout main` in the terminal to switch back to our main branch
+-   Type `git checkout main` in the terminal to switch back to the `main` branch.
 
 -   Add some changes in exapmle.qmd on main
 
--   then push our changes to the main. this should create an error when we do question 6 because what main branch records right now is only Question 1,2,5, and will continue to 6. While the testbranch it records question 3 and 4.
+-   Then push the changes to the `main`. This will create an error in Question 6 because what the `main` branch records right now is only Questions 1, 2, 5, and will continue to 6, whereas `testbranch` records Questions 3 and 4.
 
 ### Question 6: Merge and Resolve Conflict
 
--   Now we want to simulate conflict. Type `git merge testbranch` to merge the changes with the branch
+-   Now, to simulate a conflict, type `git merge testbranch` to merge the changes from the branch.
 
 -   Git will show an error like this:
 
 ![](images/clipboard-2659250452.png)
 
--   Then in our source panel will pop up this messages showing `<<<<<< HEAD and ======`. This means that git want us to clarify which changes that we want to keep. in this case, i choose to keep all the changes that I have been made both in branch and main so I just need to delete all of the `<<<<<< HEAD and ======` sign.
+-   Then, in the **Source** panel, this message will pop up showing `<<<<<<< HEAD` and `=======`. This means Git wants us to clarify which changes we want to keep.
 
     ![](images/clipboard-3277969989.png){width="667"}
 
+-   In this case, I choose to keep all the changes that I have made both in the branch and in `main`, so I just need to delete all of the `<<<<<<< HEAD` and `=======` signs.
+
 ### Question 7: Create a Commit Using Annotated Tag
 
--   After we resolve the conflict in the previous question, we want to push the changes with annotated tag to the push. Type `git tag -a v1.0 -m "Tagging version 1.0"` to create a commit with an annotated flag and push it with `git push origin v1.0`
+-   After resolving the conflict in the previous question, we want to push the changes with an annotated tag.
+-   Type `git tag -a v1.0 -m "Tagging version 1.0"` to create a commit with an annotated tag.
+-   Push it using `git push origin v1.0`.
 
 ![](images/clipboard-2645839883.png)
 
 ### Question 8: Delete Testbranch
 
--   to delete the `testbranch` that we have already created, we could use git command from terminal to do that. type `git branch -d testbranch` to initiate the deletion of the branch then followed by the command `git push origin --delete testbranch` to push the deletion process.
+-   To delete the `testbranch` we created earlier, use the command `git branch -d testbranch` to delete the local branch.
 
-    ![](images/clipboard-348984791.png)
+-   Then, type `git push origin --delete testbranch` to push the deletion process to GitHub.
+
+![](images/clipboard-348984791.png)
 
 ### Question 9: Show Condensed Log
 
--   As per now, we already done so many changes in our files and Git also had a feature to show what commit that we have done so we could track it. to do so, we could type `git log --oneline` command in the terminal
+-   As we've made many changes to our files, Git has a feature to show the commits we have made so we can track them.
+-   To do this, type `git log --oneline` in the terminal to see a condensed view of the commit history.
 
 ![](images/clipboard-2469502363.png)
 
 ### Question 10: Undo Commit Without Losing Changes
 
-Git also has a feature to undo a commit while preserving the changes you made. It "moves" the commit pointer to a previous state but keeps the changes from that commit in the staging area (index). This allows you to edit or add new changes before committing again. We could do this by typing `git reset --soft HEAD~1` command in the terminal. In this example we will try exercise the function by committing a simple plot using ggplot.
+-   Git also has a feature to undo a commit while preserving the changes you made. It moves the commit pointer to a previous state but keeps the changes from that commit in the staging area (index). This allows you to edit or add new changes before committing again.
+
+-   To do this, type `git reset --soft HEAD~1` in the terminal.
+
+-   In this example, we will practice using the function by committing a simple plot using `ggplot2`.
 
 ```{r}
 
@@ -115,14 +127,14 @@ ggplot(data, aes(x = x, y = y)) +
 
 ```
 
--   First we try to commit our plot to the repo but suddenly after committing we realize we want to make some changes to plot. lets say I want to change the title to "Simple Scatter Plot" instead of "Scatter Plot"
+-   First, we commit our plot to the repository, but after committing, we realize we want to make some changes to the plot. For example, we want to change the title to "Simple Scatter Plot" instead of "Scatter Plot".
 
 ![](images/clipboard-4149047022.png)
 
--   After we type the command of `git reset --soft HEAD~1` and check our commit history, it show that the commit is already moves one step behind but still keeps our work in the directory and ready to be committed again.
+-   After running the command `git reset --soft HEAD~1` and checking our commit history, we will see that the commit has moved one step back but the work remains in the directory and is ready to be committed again.
 
     ![](images/clipboard-1567667199.png)
 
--   After we done with our revision, the file is ready to be committed again.
+-   After we finish the revision, the file is ready to be committed again.
 
     ![](images/clipboard-1761549367.png)
