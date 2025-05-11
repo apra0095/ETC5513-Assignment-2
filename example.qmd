@@ -48,15 +48,21 @@ options(warn = -1)
 
 -   Type `git status` in the terminal to check whether Git is tracking the changes. Then type `git add .` to stage the file and `git commit -m "pushing file to testbranch"`.
 
--   Finish with the command `git push origin testbranch` to push the changes to the `testbranch`.
-
-    ![](images/clipboard-1433599888.png)
+    ![](images/clipboard-2054616016.png)
 
 ### Question 4: Add Data Folder and Amend the Previous Commit
 
--   Create a `data` folder in the working directory and fill it with the Assignment 1 data. Then commit it.
+-   Previously we already make some changes in the qmd file and committed to the `testbranch` . However, we also want to add another file called "data" to our repository in that specific commit.
 
--   If, for instance, the wrong data was copied and needs to be replaced with the correct file, you can use the `git commit --amend` function to edit the last commit.
+-   To do that, first, Create a `data` folder in the working directory and fill it with the Assignment 1 data.
+
+-    after that, we could amend the previous commit by typing this command `git commit --amend` and Git will open a text editor stating our last commit and the untracked files. All we need to do is to adjust the commit message following what we have been added, in this case data file, close and save the file.
+
+    ![](images/clipboard-51895079.png)
+
+-   After that, we just need to push the changes to the `testbranch` by typing `git push origin testbranch` . This push is already included the data file that we recently added by doing a commit amend from previous commit.
+
+    ![](images/clipboard-3603782891.png)
 
 ### Question 5: Modify example.qmd in Main to Prepare Creating Conflict
 

@@ -87,21 +87,26 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/clipboard-3326618688.png" class="img-fluid"></p></li>
 </ul>
 </section>
-<section id="question-3-create-branch-modify-file-and-push" class="level3">
-<h3 class="anchored" data-anchor-id="question-3-create-branch-modify-file-and-push">Question 3: Create Branch, Modify File, and Push</h3>
+<section id="question-3-create-branch-modify-file-and-add-the-file" class="level3">
+<h3 class="anchored" data-anchor-id="question-3-create-branch-modify-file-and-add-the-file">Question 3: Create Branch, Modify File, and Add the File</h3>
 <ul>
 <li><p>Type <code>git checkout -b testbranch</code> in the terminal to create a new branch called <code>testbranch</code> and switch to it.</p></li>
 <li><p>Modify the file to test. For example, I am modifying the file by typing the Question 3 command.</p></li>
-<li><p>Type <code>git status</code> in the terminal to check whether Git is tracking the changes. Then type <code>git add .</code> to stage the file and <code>git commit -m "pushing file to testbranch"</code>.</p></li>
-<li><p>Finish with the command <code>git push origin testbranch</code> to push the changes to the <code>testbranch</code>.</p>
-<p><img src="images/clipboard-1433599888.png" class="img-fluid"></p></li>
+<li><p>Type <code>git status</code> in the terminal to check whether Git is tracking the changes. Then type <code>git add .</code> to stage the file and <code>git commit -m "pushing file to testbranch"</code>.</p>
+<p><img src="images/clipboard-2054616016.png" class="img-fluid"></p></li>
 </ul>
 </section>
 <section id="question-4-add-data-folder-and-amend-the-previous-commit" class="level3">
 <h3 class="anchored" data-anchor-id="question-4-add-data-folder-and-amend-the-previous-commit">Question 4: Add Data Folder and Amend the Previous Commit</h3>
 <ul>
-<li><p>Create a <code>data</code> folder in the working directory and fill it with the Assignment 1 data. Then commit it.</p></li>
-<li><p>If, for instance, the wrong data was copied and needs to be replaced with the correct file, you can use the <code>git commit --amend</code> function to edit the last commit.</p></li>
+<li><p>Previously we already make some changes in the qmd file and committed to the <code>testbranch</code> . However, we also want to add another file called “data” to our repository in that specific commit.</p></li>
+<li><p>To do that, first, Create a <code>data</code> folder in the working directory and fill it with the Assignment 1 data.</p></li>
+<li><p>after that, we could amend the previous commit by typing this command <code>git commit --amend</code> and Git will open a text editor stating our last commit and the untracked files. All we need to do is to adjust the commit message following what we have been added, in this case data file, close and save the file.</p></li>
+</ul>
+<pre><code>![](images/clipboard-51895079.png)</code></pre>
+<ul>
+<li><p>After that, we just need to push the changes to the <code>testbranch</code> by typing <code>git push origin testbranch</code> . This push is already included the data file that we recently added by doing a commit amend from previous commit.</p>
+<p><img src="images/clipboard-3603782891.png" class="img-fluid"></p></li>
 </ul>
 </section>
 <section id="question-5-modify-example.qmd-in-main-to-prepare-creating-conflict" class="level3">
